@@ -1,0 +1,171 @@
+﻿@model List<joinModel>
+
+
+@*@{
+    Layout = null;
+}*@
+
+<html>
+<head>
+	
+	<link href="~/Web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="~/Web2/css/style.css" rel='stylesheet' type='text/css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
+	/>
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!----webfonts---->
+		<link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+		<!----//webfonts---->
+		  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<!--end slider -->
+		<!--script-->
+<script type="text/javascript" src="~/Web2/js/move-top.js"></script>
+<script type="text/javascript" src="~/Web2/js/easing.js"></script>
+
+
+</head>
+<body>
+<!---header---->			
+<div class="header">  
+	 
+   @* <dl class="row">*@
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>*@
+    @*    <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BlogImage)
+			
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BlogImage)
+			<img src="@Model.BlogImage" alt="Sample Image" width="300px"/>
+        </dd>
+        
+    </dl>*@
+	</div>
+	<div class="single">
+	 <div class="container">
+		  <div class="col-md-8 single-main">				 
+			  <div class="single-grid">
+				  @*@foreach (var item in Model)
+				  {*@
+					  
+				 
+				  <dl class="row">
+					  <dt class = "col-sm-2">
+                     </dt>
+                   <dd class = "col-sm-10">
+                    @* @Html.DisplayFor(model => model.BlogImage)*@
+			     <div align="center"> <img src="~/web2/images/yorum.png" alt=""  width="300px"/></div>
+                   </dd>
+                    </dl>
+					@*<img src="~/web/" alt=""/>			*@			 					 
+					@*<p>Lorem Ipsum is simply dummy text of the printing and .</p>*@
+			      <dd class = "col-sm-10">
+                  @*<label style="color:red"> @item.Baslik </label>*@
+                  </dd>
+				  <br />
+					@*<dd class = "col-sm-10">
+                     @Html.DisplayFor(model => model.Aciklama)
+                  </dd>*@
+				  @*@item.Baslik*@
+				@*}*@
+				</div>
+			<div class="clearfix"></div>
+
+			@foreach (var item in Model)
+			{
+				
+			
+			<ul class="comment-list">
+				  
+						<li><img src="~/Web2/images/yorum.png" class="img-responsive" alt="">
+		  		   <div class="desc">
+		             <p>@item.KullaniciAdi:@item.YapilanYorum</p>
+        @*<dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KullaniciAdi) 
+			 @Html.DisplayFor(model => model.YapilanYorum) 
+        </dd>
+			*@		 
+					 </div>
+		  		   <div class="clearfix"></div>
+		  		   </li>
+					
+		  	  </ul>
+			}
+				
+			  @*<div class="content-form">
+					 <h3>Bir Yorum Yapın</h3>*@
+					
+				   @Html.Partial("Yorum")
+				
+						 @*</div>*@
+				
+				
+				
+		  </div>
+		<div class="col-md-4 side-content">
+				 <div class="recent">
+					 <h3>Yorum Yapan Kişiler</h3>
+					 @foreach (var item in Model)
+		 {
+					 <ul>
+					 <li><a href="/Join/Yorum/@item.KullaniciAdi">@item.KullaniciAdi: @item.YapilanYorum</a></li>
+					 @*<li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+					 <li><a href="#">Nunc dignissim risus consecu</a></li>
+					 <li><a href="#">Cras ornare tristiqu</a></li>*@
+					 </ul>
+		 }
+				 </div>
+				 </div>
+			  @*<div class="col-md-4 side-content">
+				 <div class="recent">
+					 <h3>RECENT POSTS</h3>
+					 <ul>
+					 <li><a href="#">Aliquam tincidunt mauris</a></li>
+					 <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+					 <li><a href="#">Nunc dignissim risus consecu</a></li>
+					 <li><a href="#">Cras ornare tristiqu</a></li>
+					 </ul>
+				 </div>
+				 <div class="comments">
+					 <h3>RECENT COMMENTS</h3>
+					 <ul>
+					 <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+					 <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+					 <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+					 </ul>
+				 </div>
+			  </div>*@
+			  <div class="clearfix"></div>
+	  </div>
+</div>
+
+
+   
+
+
+</body>
+</html>
+
+
+

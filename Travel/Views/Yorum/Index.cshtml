@@ -1,0 +1,92 @@
+﻿@model List<BlogYorumModel>
+
+<h2>Yorumlar</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <p>
+    <a asp-action="OlusturGetir">Yeni Yorum </a>
+</p>
+<table class="table">
+   <b>
+    <thead>
+        <tr>
+            
+        <th>
+          <b>
+           Kullanıcı Adı
+          </b>
+        </th>
+        <th>
+            <b>
+            Açıklması
+            </b>
+        </th>
+        <th>
+            <b>
+           Mail
+           </b>
+        </th>
+        <th>
+            <b>
+            Yorum
+            </b>
+        </th>
+        <th>
+            <b>
+            Başlık
+            </b>
+        </th>
+        <th>
+
+        </th>
+        </tr>
+      
+    </thead>
+      </b>
+    <tbody>
+        @foreach (BlogYorumModel item in Model)
+        {
+           <tr>
+               <td>
+                   @item.KullaniciAdi
+               </td>
+               <td>
+                   @item.Aciklama
+               </td>
+               <td>
+                   @item.Mail
+               </td>
+               <td>
+                   @item.Yorum
+                   
+               </td>
+               <td>
+                   @item.Baslik
+               </td>
+               <td>
+                   <a asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
+                   <a asp-action="Details" asp-route-id="@item.Id">Detay</a> |
+                   <a asp-action="Delete" asp-route-id="@item.Id">Sil</a> |
+               </td>
+           </tr> 
+        }
+    </tbody>
+</table>
+</body>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/main.js"></script>
+   
+
+</html>

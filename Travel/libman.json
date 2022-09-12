@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap-table@1.20.2",
+      "destination": "wwwroot/lib/bootstrap/bootstrap-table/"
+    },
+    {
+      "library": "select2-bootstrap-css@1.4.6",
+      "destination": "wwwroot/lib/bootstrap/select2-bootstrap-css/"
+    }
+  ]
+}

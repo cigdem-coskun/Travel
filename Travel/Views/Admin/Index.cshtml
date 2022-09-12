@@ -1,0 +1,35 @@
+﻿@model List<BlogModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Blog Listesi</h1>
+@if(TempData["Mesaj"] !=null)
+{
+    <p class="text-primary">@TempData["Mesaj"]</p>
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID </th>
+        <th>BAŞLIK </th>
+        <th>SİL </th>
+        <th>GÜNCELLE </th>
+        <th>DÜZENLE </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        
+  
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Baslik</td>
+        <td><a href="/Admin/Delete/@item.Id" class="btn btn-danger">sil</a></td>
+        <td> <a href="/Admin/Update/@item.Id" class="btn btn-warning">Güncelle</a></td>
+        <td><a href="#" class="btn btn-default">Detaylar</a></td>
+    </tr>
+      }
+
+</table>
+<a href="/Admin/Edit" class="btn btn-primary">Yeni Blog</a>

@@ -1,0 +1,32 @@
+﻿@model BlogModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>Yeni Blog Ekleme</h1>
+@if(TempData["Mesaj"] !=null)
+{
+    <p class="text-primary">@TempData["Mesaj"]</p>
+}
+<form action="/Admin/Edit" method="post">
+  <div class="mb-3">
+    <label for="tbBaslık" class="form-label">Başlık</label>
+    <input type="text" class="form-control" id="tbBaslik" name="Baslik">
+  </div>
+
+  <div class="mb-3">
+    <label for="tbAciklama" class="form-label">Açıklama</label>
+    <textarea class="form-control" id="tbAciklama" rows="3" name="Aciklama"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="tbTarih" class="form-label">Tarih</label>
+    <textarea class="form-control" id="tbTarih" rows="3" name="Tarih"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="tbresim" class="form-label">Resim</label>
+    <textarea class="form-control" id="tbBlogImage" rows="3" name="BlogImage"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

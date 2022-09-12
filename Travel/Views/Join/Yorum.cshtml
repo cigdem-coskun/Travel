@@ -1,0 +1,35 @@
+﻿@model List<joinModel>
+
+         <h3>Bir Yorum Yapın </h3>
+        <form  asp-action="Yorum" method="post">
+            <input type="text" class="form-control" id="tbBlogid" name="Blogid" value="@ViewBag.mesaj" placeholder="BlogId"required/>
+            <input type="text" class="form-control" id="tbKullanici" name="KullaniciAdi" placeholder="Kullanıcı Adı" required />
+   
+    <input type="text" class="form-control" id="tbMail" name="Mail" placeholder="Mail Adresi" required />
+    <textarea class="form-control" id="tbYapilanYorum" name="YapilanYorum" rows="3" placeholder="Yorum"></textarea>
+            
+            <div class="form-group">
+                <input type="submit" value="Yorum yap" class="btn btn-success" />
+        <a asp-controller="Blog" style="color:deepskyblue" asp-action="Index">Blog Geri Dön</a>
+            </div>
+        </form>
+  
+
+
+@*<div>
+    <a asp-controller="Blog" asp-action="Index">Blog Geri Dön</a>
+</div>*@
+
+  
+     @* <h3>Bir Yorum Yapın</h3>
+      <form  asp-controller="Join" asp-action="Yorum" method="post">
+          <input  type="text" placeholder="Kullanıcı Adı" name="KullaniciAdi" required/>
+          <input type="text"  name="Blogid" placeholder="BlogId" required/>
+           <input type="text"  name="Mail" placeholder="Mail Adresi" required />
+         <textarea  name="YapilanYorum" rows="3" placeholder="Yorum"></textarea>
+            
+            
+                <input type="submit" value="Yorum yap" class="btn btn-success" />
+            
+      </form>*@
+  
