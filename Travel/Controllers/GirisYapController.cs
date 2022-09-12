@@ -23,6 +23,7 @@ namespace Travel.Controllers
         public IActionResult Index()
         {
             return View();
+
         }
         public IActionResult Login()
         {
